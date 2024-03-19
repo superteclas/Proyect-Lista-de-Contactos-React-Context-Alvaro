@@ -10,10 +10,10 @@ export const ListaView = () => {
     return (
         <div className="container">
             {store.demo.map((item, index) => (
-                <div key={index} className="card mb-3" style={{ maxWidth: "540px" }}>
+                <div key={index} className="card mb-3 mx-auto px-2" style={{ maxWidth: "70em" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={pacoImage} className="img-fluid rounded-circle mt-5" alt="Paco Martinez Soria" /> {/* Usar la imagen importada aquí */}
+                            <img src={pacoImage} className="img-fluid rounded-circle mt-0" alt="Paco Martinez Soria" /> {/* Usar la imagen importada aquí */}
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
