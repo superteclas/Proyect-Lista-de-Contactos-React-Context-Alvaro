@@ -21,7 +21,7 @@ export const ListaView = () => {
                 <div key={index} className={`card mx-auto px-2 mt-5 ${index === repiteCards.length - 1 ? 'mb-n5' : ''}`} style={{ maxWidth: "70em" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={pacoImage} className="img-fluid rounded-circle mt-0" alt="Paco Martinez Soria" />
+                        <img src={pacoImage} className="img-fluid rounded-circle mt-5 smaller-image" alt="Paco Martinez Soria" />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
