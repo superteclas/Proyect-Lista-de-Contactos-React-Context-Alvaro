@@ -8,7 +8,7 @@ export const Home = () => (
 		<p>
 			<img src={rigoImage} />
 		</p>
-		<a href="#" className="btn btn-success">
+		<a href="#" className="btn btn-dark">
 			Si ves este botón no se ha roto nada
 		</a>
 	</div>
