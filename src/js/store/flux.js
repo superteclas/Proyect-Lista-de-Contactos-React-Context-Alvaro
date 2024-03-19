@@ -2,11 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			demo: [
-				{
-					title: "LISTA DE CONTACTOS",
-					background: "white",
-					initial: "white"
-				},
+				
 				{
 					title: "AÑADIR CONTACTOS",
 					background: "white",

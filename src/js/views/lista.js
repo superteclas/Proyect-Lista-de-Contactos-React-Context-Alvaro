@@ -31,7 +31,9 @@ export const ListaView = () => {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+                
             ))}
             <Link to="/">
                 <button className="btn btn-primary">Back home</button>

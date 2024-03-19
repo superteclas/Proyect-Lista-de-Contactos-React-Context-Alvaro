@@ -36,7 +36,7 @@ export const Single = props => {
     </div>
 		</form>
 	
-		<Link to="/lista" className="btn-link">Ves a la lista de contactos desde aquí</Link><br></br>
+		<Link to="/lista" className="btn-link">Link a la lista de contactos</Link><br></br>
 		<Link to="/" className="btn-link">O si lo prefieres vuelve a la página principal</Link>
 		
 		</div>
