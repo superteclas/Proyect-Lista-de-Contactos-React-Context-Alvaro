@@ -5,7 +5,7 @@ export const Navbar = () => {
     return (
         <nav className="navbar navbar-dark bg-dark justify-content-center mb-3">
             <div className="ml-auto">
-                <Link to="/single/1">
+                <Link to="/single">
                     <button className="btn btn-danger custom-button">AÑADIR CONTACTOS</button>
                 </Link>
             </div>
