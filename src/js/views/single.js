@@ -37,7 +37,7 @@ export const Single = props => {
 		</form>
 	
 		<Link to="/lista" className="btn-link">Link a la lista de contactos</Link><br></br>
-		<Link to="/" className="btn-link">O si lo prefieres vuelve a la página principal</Link>
+		<Link to="/" className="btn-link">Si lo prefieres vuelve a la página principal pinchando aquí</Link>
 		
 		</div>
 	);
