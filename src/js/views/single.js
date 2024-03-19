@@ -32,14 +32,13 @@ export const Single = props => {
 			</div>
 			
 			<div className="col-12">
-				<button type="submit" className="btn btn-primary">Salvar Info</button>
-			</div>
+        <button type="submit" className="btn btn-primary btn-block w-100">Salvar Info</button>
+    </div>
 		</form>
 	
 		
-		<Link to="/">
-			<button className="btn btn-primary btn-lg">Back home</button>
-		</Link>
+		<Link to="/" className="btn-link">Si lo prefieres vuelve a la página principal</Link>
+		
 		</div>
 	);
 };

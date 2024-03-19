@@ -1,3 +1,13 @@
-/* 
-    General Styles
-*/
+.btn-link {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color:blue;
+    text-decoration: underline;
+    margin-left: 2em;
+    margin-top: 1em;
+}
+  
