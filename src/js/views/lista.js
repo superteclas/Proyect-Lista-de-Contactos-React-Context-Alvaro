@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.css";
+import pacoImage from "../../img/paco.jpg";
 
 export const ListaView = () => {
     const { store, actions } = useContext(Context);
@@ -14,7 +13,7 @@ export const ListaView = () => {
                 <div key={index} className="card mb-3" style={{ maxWidth: "540px" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src="..." className="img-fluid rounded-start" alt="..." />
+                            <img src={pacoImage} className="img-fluid rounded-circle mt-5" alt="Paco Martinez Soria" /> {/* Usar la imagen importada aquí */}
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
@@ -31,9 +30,7 @@ export const ListaView = () => {
                             </div>
                         </div>
                     </div>
-                    
                 </div>
-                
             ))}
             <Link to="/">
                 <button className="btn btn-primary">Back home</button>
