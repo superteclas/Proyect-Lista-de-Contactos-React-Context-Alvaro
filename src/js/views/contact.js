@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 import "../../styles/demo.css";
 import pacoImage from "../../img/paco.jpg";
 
-export const ListaView = () => {
+export const Contact = () => {
     const { store, actions } = useContext(Context);
 
     // REPETIR LA CARTA
@@ -13,7 +13,7 @@ export const ListaView = () => {
     return (
         <div className="container position-relative">
             <div className="d-flex justify-content-end mt-3" style={{ maxWidth: "200px", marginLeft: "auto" }}>
-                <Link to="/single">
+                <Link to="/addContact">
                     <button className="btn btn-success">Crear nuevo contacto</button>
                 </Link>
             </div>

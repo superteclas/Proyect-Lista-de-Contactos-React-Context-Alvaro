@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const AddContact = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 
@@ -36,13 +36,11 @@ export const Single = props => {
     </div>
 		</form>
 	
-		<Link to="/lista" className="btn-link">Link a la lista de contactos</Link><br></br>
+		<Link to="/contact" className="btn-link">Link a la lista de contactos</Link><br></br>
 		<Link to="/" className="btn-link">Si lo prefieres vuelve a la página principal pinchando aquí</Link>
 		
 		</div>
 	);
 };
 
-Single.propTypes = {
-	match: PropTypes.object
-};
+
