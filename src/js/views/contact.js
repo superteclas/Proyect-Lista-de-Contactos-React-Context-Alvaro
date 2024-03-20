@@ -21,20 +21,30 @@ export const Contact = () => {
                 <div key={index} className={`card mx-auto px-2 mt-5 ${index === repiteCards.length - 1 ? 'mb-n5' : ''}`} style={{ maxWidth: "70em" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                        <img src={pacoImage} className="img-fluid rounded-circle mt-5 smaller-image" alt="Paco Martinez Soria" />
+                            <img src={pacoImage} className="img-fluid rounded-circle mt-5 smaller-image" alt="Paco Martinez Soria" />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-4">
                             <div className="card-body">
                                 <h5 className="card-title">{store.demo[index % store.demo.length].title}</h5>
                                 <p className="card-text">
-                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                    <small className="text-body-secondary">Last updated 3 mins ago</small>
                                 </p>
                                 <p className="card-text">
                                     <small className="text-body-secondary">Last updated 3 mins ago</small>
                                 </p>
-                                <button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-                                    Change Color
-                                </button>
+                                <p className="card-text">
+                                    <small className="text-body-secondary">Last updated 3 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                        <div className="card-iconos d-flex justify-content-between">
+                                <p className="card-text">
+                                    <small className="text-body-secondary">Last updated 3 mins ago</small>
+                                </p>
+                                <p className="card-text">
+                                    <small className="text-body-secondary">Last updated 3 mins ago</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -42,7 +52,7 @@ export const Contact = () => {
             ))}
             {/* Botón de regreso al inicio */}
             <Link to="/">
-                <button className="btn btn-primary">Back home</button>
+                <button className="btn btn-primary mt-3">Back home</button>
             </Link>
         </div>
     );
