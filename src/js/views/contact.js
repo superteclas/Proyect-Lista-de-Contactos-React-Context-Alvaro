@@ -20,7 +20,7 @@ export const Contact = () => {
         <div className="container position-relative">
             <div className="d-flex justify-content-end mt-3" style={{ maxWidth: "200px", marginLeft: "auto" }}>
                 <Link to="/addContact">
-                    <button className="btn btn-success mb-4">Crear nuevo contacto</button>
+                    <button className="btn btn-dark mb-4">Crear nuevo contacto</button>
                 </Link>
             </div>
             {repiteCards.map((_, index) => (
@@ -64,7 +64,7 @@ export const Contact = () => {
             ))}
             {/* Botón de regreso al inicio */}
             <Link to="/">
-                <button className="btn btn-primary mt-3">Back home</button>
+                <button className="btn btn-dark mt-3">Back home</button>
             </Link>
 
             {/* Modal de Bootstrap */}

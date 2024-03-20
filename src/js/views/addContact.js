@@ -32,7 +32,7 @@ export const AddContact = props => {
 			</div>
 			
 			<div className="col-12">
-        <button type="submit" className="btn btn-primary btn-block w-100">Salvar Info</button>
+        <button type="submit" className="btn btn-danger btn-block w-100">Salvar Info</button>
     </div>
 		</form>
 	
