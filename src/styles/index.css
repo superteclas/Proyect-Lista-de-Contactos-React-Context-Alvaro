@@ -12,6 +12,11 @@
 }
 .smaller-image{
 
-width:50%;
+width:45%;
+margin-left: 2em;
+}
+
+.black-icon{
+    color: black;
 }
 

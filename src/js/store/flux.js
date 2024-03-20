@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			demo: [
 				
 				{
-					title: "AÑADIR CONTACTOS",
+					title: "Paco Martinez Soria",
 					background: "white",
 					initial: "white"
 				}
