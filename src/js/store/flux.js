@@ -13,13 +13,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             // crear un nuevo contacto
-            createContact: (contacts) => {
+            createContact: (data) => {
                 fetch("https://playground.4geeks.com/apis/fake/contact/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(contacts)
+                    body: JSON.stringify(data)
                 })
                 .then(response => response.json())
                 .then(data => getActions().loadContacts())
