@@ -14,12 +14,10 @@ export const AddContact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-    
-
-        // Llama a la acción para crear el contacto
+    // crear el contacto
         await actions.createContact();
 
-        // Redirecciona a la página de contactos
+        // página de contactos
         navigate("/contact");
     };
 

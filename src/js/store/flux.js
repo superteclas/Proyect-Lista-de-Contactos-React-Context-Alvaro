@@ -13,16 +13,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             // crear un nuevo contacto
-            createContact: (data) => {
+            createContact: (newContact) => {
                 fetch("https://playground.4geeks.com/apis/fake/contact/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify()
                 })
-                .then(response => response.json())
-                .then(data => getActions().loadContacts())
+                .then(response => response.json(newContact))
+                .then( data=> getActions().loadContacts())
                 .catch(error => console.error("Error creating contact:", error));
             },
 
