@@ -21,24 +21,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                     },
                     body: JSON.stringify(contacts)
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Failed to create contact.");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Recargamos los contactos después de crear uno nuevo
-                    getActions().loadContacts();
-                })
-                .catch(error => {
-                    console.error("Error creating contact:", error);
-                   
-                  
-                });
+                .then(response => response.json())
+                .then(data => getActions().loadContacts())
+                .catch(error => console.error("Error creating contact:", error));
             },
 
-            //  cargar todos los contactos desde la API
+            // cargar todos los contactos desde la API
             loadContacts: () => {
                 fetch("https://playground.4geeks.com/apis/fake/contact/agenda/{agenda_slug}", {
                     method: "GET",
@@ -46,63 +34,33 @@ const getState = ({ getStore, getActions, setStore }) => {
                         "Content-Type": "application/json"
                     }
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Failed to load contacts.");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Actualiza el estado de los contactos
-                    setStore({ contacts: data });
-                })
-                .catch(error => {
-                    console.error("Error loading contacts:", error);
-                });
+                .then(response => response.json())
+                .then(data => setStore({ contacts: data }))
+                .catch(error => console.error("Error loading contacts:", error));
             },
 
-            //  actualizar un contacto 
+            // actualizar un contacto 
             updateContact: (contactId, updatedContact) => {
-                fetch(`https://playground.4geeks.com/apis/fake/contact/${contactId}`, {
+                fetch(`https://playground.4geeks.com/apis/fake/contact/{contactId}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(updatedContact)
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Failed to update contact.");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Recargar  contactos después de actualizar 
-                    getActions().loadContacts(updatedContact.agenda_slug);
-                })
-                .catch(error => {
-                    console.error("Error updating contact:", error);
-                });
+                .then(response => response.json())
+                .then(data => getActions().loadContacts(updatedContact.agenda_slug))
+                .catch(error => console.error("Error updating contact:", error));
             },
 
-            //  eliminar un contacto
+            // eliminar un contacto
             deleteContact: (contactId, agendaSlug) => {
-                fetch(`https://playground.4geeks.com/apis/fake/contact/${contactId}`, {
+                fetch(`https://playground.4geeks.com/apis/fake/contact/{contactId}`, {
                     method: "DELETE"
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Failed to delete contact.");
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Recargar
-                    getActions().loadContacts(agendaSlug);
-                })
-                .catch(error => {
-                    console.error("Error deleting contact:", error);
-                });
+                .then(response => response.json())
+                .then(data => getActions().loadContacts(agendaSlug))
+                .catch(error => console.error("Error deleting contact:", error));
             }
         }
     };
