@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPencilAlt, faTrash } from "@fortawesome/free-solid-svg-icons";
-import pacoImage from "../../img/paco.jpg"; // Asegúrate de importar la imagen correctamente
+import pacoImage from "../../img/paco.jpg"; 
 
 export const Contact = () => {
     const { store, actions } = useContext(Context);
@@ -33,7 +33,7 @@ export const Contact = () => {
                 <div key={contact.id} className="card mx-auto px-2 mt-5" style={{ maxWidth: "90em" }}>
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={pacoImage} className="img-fluid rounded-circle mt-5 smaller-image" alt={contact.full_name} />
+                            <img src={pacoImage} className="img-fluid rounded-circle mt-5 smaller-image" alt={""} />
                         </div>
                         <div className="col-md-4">
                             <div className="card-body">

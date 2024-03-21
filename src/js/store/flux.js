@@ -38,7 +38,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 });
             },
 
-            // Método para cargar todos los contactos desde la API
+            //  cargar todos los contactos desde la API
             loadContacts: () => {
                 fetch("https://playground.4geeks.com/apis/fake/contact/agenda/{agenda_slug}", {
                     method: "GET",
@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 });
             },
 
-            // Método para actualizar un contacto existente
+            //  actualizar un contacto 
             updateContact: (contactId, updatedContact) => {
                 fetch(`https://playground.4geeks.com/apis/fake/contact/${contactId}`, {
                     method: "PUT",
@@ -77,7 +77,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return response.json();
                 })
                 .then(data => {
-                    // Recargamos los contactos después de actualizar uno
+                    // Recargar  contactos después de actualizar 
                     getActions().loadContacts(updatedContact.agenda_slug);
                 })
                 .catch(error => {
@@ -85,7 +85,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 });
             },
 
-            // Método para eliminar un contacto
+            //  eliminar un contacto
             deleteContact: (contactId, agendaSlug) => {
                 fetch(`https://playground.4geeks.com/apis/fake/contact/${contactId}`, {
                     method: "DELETE"
@@ -97,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return response.json();
                 })
                 .then(data => {
-                    // Recargamos los contactos después de eliminar uno
+                    // Recargar
                     getActions().loadContacts(agendaSlug);
                 })
                 .catch(error => {
