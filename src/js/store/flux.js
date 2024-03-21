@@ -42,7 +42,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             // Método para cargar todos los contactos desde la API
             loadContacts: () => {
-                fetch("https://playground.4geeks.com/apis/fake/contact/")
+                fetch("https://playground.4geeks.com/apis/fake/contact/agenda/{agenda_slug}", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
                 .then(response => {
                     if (!response.ok) {
                         throw new Error("Failed to load contacts.");
