@@ -12,14 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             contacts: [] // array para almacenar los contactos
         },
         actions: {
-            // Método para crear un nuevo contacto
-            createContact: (newContact) => {
+            // crear un nuevo contacto
+            createContact: (contacts) => {
                 fetch("https://playground.4geeks.com/apis/fake/contact/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(newContact)
+                    body: JSON.stringify(contacts)
                 })
                 .then(response => {
                     if (!response.ok) {
@@ -33,10 +33,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
                 .catch(error => {
                     console.error("Error creating contact:", error);
-                    // Si ocurre un error, guarda el contacto localmente en lugar de enviarlo a la API
-                    const store = getStore();
-                    const updatedContacts = [...store.contacts, newContact];
-                    setStore({ contacts: updatedContacts });
+                   
+                  
                 });
             },
 
@@ -55,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     return response.json();
                 })
                 .then(data => {
-                    // Actualiza el estado de los contactos en la tienda
+                    // Actualiza el estado de los contactos
                     setStore({ contacts: data });
                 })
                 .catch(error => {
