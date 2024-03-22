@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+
 export const AddContact = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
