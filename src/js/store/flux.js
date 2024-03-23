@@ -13,23 +13,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
         actions: {
             // crear un nuevo contacto
-            createContact: (newContact) => {
-            
-                fetch("https://playground.4geeks.com/apis/fake/contact/superteclas", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newContact)
-                    
-                })
-                .then(response => response.json())
-                .then( data=> {const store = getStore();
-                    const updatedContacts = [...store.contacts, data];
-                    setStore({ contacts: updatedContacts });})
-                .catch(error => console.error("Error creating contact:", error));
+            getAllContacts: function () {
+                fetch('https://playground.4geeks.com/apis/fake/contact/agenda/alvaro')
+                .then((response)=>response.json())
+                .then((data)=>setStore({contacts: data}))
+                .catch((error)=>console.log(error))
             },
-
+            
+            
         }
     }  
             
