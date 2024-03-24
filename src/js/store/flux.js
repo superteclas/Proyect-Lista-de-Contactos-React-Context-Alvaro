@@ -1,43 +1,64 @@
-const getState = ({ getStore, getActions, setStore }) => {
-    return {
-        store: {
-            demo: [
-                
-                {
-                    title: "Paco Martinez Soria",
-                    background: "white",
-                    initial: "white"
-                }
-            ],
-            contacts:[]
-        },
-        actions: {
-            // crear un nuevo contacto
-            getAllContacts: function () {
-                fetch('https://playground.4geeks.com/apis/fake/contact/agenda/alvaro')
-                .then((response)=>response.json())
-                .then((data)=>setStore({contacts: data}))
-                .catch((error)=>console.log(error))
-            },
-            
-            
-        }
-    }  
-            
+const getState = ({ getStore, setStore, getActions }) => {
+	return {
+		store: {
+			contactList: [],
+			idDelete: "",
+			contactToEdit: {}
+		},
+		actions: {
+			getData: str => {
+				fetch("https://playground.4geeks.com/apis/fake/contact/agenda/superteclas")
+					.then(res => res.json())
+					.then(data => setStore({ contactList: data }))
+					.catch(error => console.log(error));
+			},
+			addContact: user => {
+				fetch("https://playground.4geeks.com/apis/fake/contact", {
+					method: "POST",
+					body: JSON.stringify(user),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(res => res.json())
+					.then(res => {
+						if (res.ok) {
+							getActions().getData();
+						}
+					});
+			},
+			addidDelete: id => {
+				setStore({ idDelete: id });
+			},
+			removeContact: () => {
+				const store = getStore();
+				fetch("https://playground.4geeks.com/apis/fake/contact/" + store.idDelete, {
+					method: "DELETE"
+				}).then(res => {
+					if (res.ok) {
+						getActions().getData();
+					}
+				});
+			},
+			editContact: (id, contact) => {
+				fetch("https://playground.4geeks.com/apis/fake/contact/" + id, {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(contact)
+				})
+					.then(res => res.json())
+					.then(res => {
+						if (res.ok) {
+							getActions().getData();
+						}
+					});
+			},
+			getContact: contact => {
+				setStore({ contactToEdit: contact });
+
+			}
+		}
+	};
 };
 
 export default getState;
-
-
-
-/* EXPLICACION DE LA FALLA 
-
-Cuando se llama a createContact con un nuevo contacto, 
-se envía una solicitud POST al servidor para crear el contacto en la API.
-
-Una vez que la solicitud es exitosa y tengo la respuesta del servidor en formato JSON, 
-el contacto recién creado se agrega al array contacts del estado global. 
-
-Esto se hace obteniendo el estado actual del almacenamiento global a través de getStore(), 
-creando un nuevo array que incluye el nuevo contacto utilizando la sintaxis de propagación (...store.contacts, data), 
-y luego actualizando el estado global con el nuevo array de contactos utilizando setStore({ contacts: updatedContacts }). */
