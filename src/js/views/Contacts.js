@@ -21,7 +21,7 @@ export const Contacts = () => {
 		<div className="container">
 			<div>
 				<p className=" d-flex justify-content-end my-3">
-					<Link className="btn btn-success" to="/add">
+					<Link className="btn btn-danger" to="/add">
 						Add new contact
 					</Link>
 				</p>
