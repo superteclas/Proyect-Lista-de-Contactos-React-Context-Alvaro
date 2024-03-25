@@ -28,7 +28,7 @@ export const Modal = props => {
 						)}
 					</div>
 					<div className="modal-body">
-						<p>If you delete this thing the entire universe will go down!</p>
+						<p>Si borras esto explotará el ordenador!</p>
 					</div>
 					<div className="modal-footer">
 						<button
@@ -47,7 +47,7 @@ export const Modal = props => {
 								actions.removeContact();
 								props.onClose();
 							}}>
-							Yes baby!
+							Yes baby, Rock and Roll!
 						</button>
 					</div>
 				</div>
