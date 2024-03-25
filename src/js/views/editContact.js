@@ -28,7 +28,7 @@ export const EditContact = () => {
 	return (
 		<div className="container">
 			<div>
-				<h1 className="text-center mt-5">Edit contact</h1>
+				<h1 className="text-center mt-5">Editar Contacto</h1>
 				<form onChange={handleChange} onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label>Full Name</label>
@@ -70,7 +70,7 @@ export const EditContact = () => {
 							defaultValue={user.phone}
 						/>
 					</div>
-					<button type="submit" onClick={() => navigate(-1)} className="btn btn-primary form-control" >
+					<button type="submit" onClick={() => navigate(-1)} className="btn btn-danger form-control" >
 						save
 					</button>
 					<Link className="Volver mt-3 w-100 text-center" to="/">

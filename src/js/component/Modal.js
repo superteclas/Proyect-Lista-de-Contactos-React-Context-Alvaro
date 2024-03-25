@@ -13,7 +13,7 @@ export const Modal = props => {
 			<div className="modal-dialog" role="document">
 				<div className="modal-content">
 					<div className="modal-header">
-						<h5 className="modal-title">Are you sure?</h5>
+						<h5 className="modal-title">Estás seguro?</h5>
 						{props.onClose ? (
 							<button
 								onClick={() => props.onClose()}

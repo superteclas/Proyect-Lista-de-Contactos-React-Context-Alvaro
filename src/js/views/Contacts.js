@@ -22,7 +22,7 @@ export const Contacts = () => {
 			<div>
 				<p className=" d-flex justify-content-end my-3">
 					<Link className="btn btn-danger" to="/add">
-						Add new contact
+						Añadir Contacto
 					</Link>
 				</p>
 				<div id="contacts" className="panel-collapse collapse show" aria-expanded="true">
