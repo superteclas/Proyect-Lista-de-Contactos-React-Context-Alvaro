@@ -21,10 +21,10 @@ export const AddContact = () => {
 	return (
 		<div className="container">
 			<div>
-				<h1 className="text-center mt-5">Add a new contact</h1>
+				<h1 className="text-center mt-5">Añadir nuevo contacto</h1>
 				<form onChange={e => setUser({ ...user, [e.target.name]: e.target.value })} onSubmit={handelSubmit}>
 					<div className="form-group">
-						<label>Full Name</label>
+						<label>Nombre Completo</label>
 						<input type="text" className="form-control" placeholder="Full Name" name="full_name" />
 					</div>
 					<div className="form-group">
@@ -36,14 +36,14 @@ export const AddContact = () => {
 						<input type="phone" className="form-control" placeholder="Enter phone" name="phone" />
 					</div>
 					<div className="form-group">
-						<label>Address</label>
+						<label>Direccion</label>
 						<input type="text" className="form-control" placeholder="Enter address" name="address" />
 					</div>
 					<button type="submit" onClick={() => navigate(-1)} className="btn btn-danger form-control">
-						save
+						Guardar
 					</button>
 					<Link className="mt-3 w-100 text-center red-link" to="/">
-    or get back to contacts
+    o vuelve a la pagina de contactos
 </Link>
 
 				</form>

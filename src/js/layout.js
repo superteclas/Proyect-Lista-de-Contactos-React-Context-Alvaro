@@ -6,10 +6,10 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 
 import { Contacts } from "./views/Contacts.js";
-import { AddContact } from "./views/addContac.js";
+import { AddContact } from "./views/addContact.js";
 import { EditContact } from "./views/editContact.js";
 import { Navbar } from "./component/navbar.js";
-
+import { Footer } from "./component/footer.js";
 
 const Layout = () => {
 	
@@ -19,7 +19,7 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-               
+               <Navbar/>
 					<Routes>
 						{/* <Route path="/index.html" element={<Contacts />} /> */}
 						<Route path="/" element={<Contacts />} />
@@ -28,7 +28,7 @@ const Layout = () => {
 						<Route path="/edit/:id" element={<EditContact />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
-					
+					<Footer/>
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
